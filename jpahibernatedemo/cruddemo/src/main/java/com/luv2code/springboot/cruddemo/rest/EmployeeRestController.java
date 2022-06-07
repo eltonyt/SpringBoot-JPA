@@ -34,7 +34,7 @@ public class EmployeeRestController {
     }
 
     @PostMapping("/employees")
-    public ResponseEntity addEmployee(@RequestBody Employee theEmployee, @PathVariable Long employeeId){
+    public ResponseEntity addEmployee(@RequestBody Employee theEmployee){
         theEmployee.setId(0L);
         employeeService.save(theEmployee);
         return ResponseEntity.status(HttpStatus.CREATED).body(theEmployee);
